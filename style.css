@@ -1,0 +1,163 @@
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #050510;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(#00ffff, #9d00ff);
+            border-radius: 10px;
+        }
+
+        /* Custom animations */
+        .animate-rotate-y {
+            animation: rotate-y 8s linear infinite;
+        }
+
+        @keyframes rotate-y {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .animate-float-delay-1 {
+            animation-delay: 1s;
+        }
+
+        .animate-float-delay-2 {
+            animation-delay: 2s;
+        }
+
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 5px currentColor, 0 0 10px currentColor;
+        }
+
+        /* Typing Animation for Hero Headline */
+        .typewriter-container {
+            overflow: hidden;
+            /* Ensures the text does not wrap before typing */
+            white-space: nowrap;
+            /* Keeps the text on a single line */
+            border-right: .15em solid var(--tw-colors-neon-blue);
+            /* The blinking cursor */
+            animation:
+                typing 3.5s steps(40, end) forwards,
+                blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: var(--tw-colors-neon-blue);
+            }
+        }
+
+        /* Scroll Animation (utility class for JavaScript) */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header scroll state */
+        .header-scrolled {
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Slightly darker, less transparent */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Background gradient opacity */
+        .bg-gradient-opacity {
+            background: linear-gradient(to bottom, rgba(10, 10, 26, 1) 0%, rgba(10, 10, 26, 0.4) 100%);
+        }
+
+        /* SVG specific styles */
+        .animated-svg path,
+        .animated-svg circle {
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            animation: svg-dash 5s linear forwards infinite;
+            opacity: 0.4;
+            animation: svg-fade 3s ease-in-out infinite alternate;
+        }
+
+        .animated-svg path:nth-child(1) {
+            animation-delay: 0s;
+            stroke: var(--tw-colors-neon-blue);
+        }
+        .cards_x{
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 2px solid gold;
+        }
+        .cards_x:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgb(34, 167, 255);
+        }
+        .batata:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .animated-svg path:nth-child(2) {
+            animation-delay: 0.5s;
+            stroke: var(--tw-colors-neon-pink);
+        }
+
+        .animated-svg path:nth-child(3) {
+            animation-delay: 1s;
+            stroke: var(--tw-colors-neon-green);
+        }
+
+        .animated-svg circle:nth-child(4) {
+            animation-delay: 1.5s;
+            stroke: var(--tw-colors-neon-purple);
+        }
+
+        .animated-svg circle:nth-child(5) {
+            animation-delay: 2s;
+            stroke: var(--tw-colors-neon-blue);
+        }
+
+        @media screen and (max-width: 768px) {
+            .title {
+                padding-top: 30px;
+            }
+        }

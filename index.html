@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sonic Dash: IoT Course</title>
+    <link rel="icon" type="image/png" href="https://www.pngmart.com/files/23/Sonic-Logo-PNG-Isolated-File.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;800&family=Space+Mono&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<body class="bg-dark text-gray-200 font-sans overflow-x-hidden">
+
+    <div id="privacyPolicyModal" class="fixed inset-0 bg-dark/90 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="bg-darker border-2 border-neon-purple rounded-xl shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto relative p-8">
+            <h3 class="text-3xl font-bold text-neon-purple mb-6 text-center font-pixel-font">Privacy Policy</h3>
+            <div class="text-gray-300 text-sm leading-relaxed space-y-4">
+                <p>Welcome to Sonic Academy! We value your privacy as much as Sonic values his rings. This policy explains how we collect, use, and protect your information as you dash through our IoT course materials.</p>
+                <h4>1. Information We Collect:</h4>
+                <p>We collect basic information like your browser type, device, and interaction data to improve your experience. If you use features like Google Drive integration, we only access necessary data to display course materials, as outlined by Google's API policies.</p>
+                <h4>2. How We Use Your Information:</h4>
+                <p>Your data helps us understand popular "zones" and "levels" (course modules) so we can make your learning journey faster and more effective. We don't sell your data to Dr. Eggman or any other third parties!</p>
+                <h4>3. Data Security:</h4>
+                <p>We implement security measures to protect your information from unauthorized access, just like Sonic protects the Chaos Emeralds. However, no internet transmission is 100% secure, so please use the internet wisely.</p>
+                <h4>4. Third-Party Links:</h4>
+                <p>Our site may contain links to external sites (like YouTube for videos or Google Drive for files). We are not responsible for the privacy practices of these other sites. Always check their policies!</p>
+                <h4>5. Changes to This Policy:</h4>
+                <p>We may update this policy periodically, much like Sonic updates his speed. Any changes will be posted here. By continuing to use our site, you agree to the updated terms.</p>
+                <p>If you have any questions about this policy, don't hesitate to reach out to our G.U.N. Headquarters contact. Stay speedy!</p>
+                </div>
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-neon-red text-3xl" onclick="closeModal('privacyPolicyModal')">&times;</button>
+        </div>
+    </div>
+
+    <div id="termsOfServiceModal" class="fixed inset-0 bg-dark/90 z-[100] flex items-center justify-center p-4 hidden">
+        <div class="bg-darker border-2 border-sonic-blue rounded-xl shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto relative p-8">
+            <h3 class="text-3xl font-bold text-sonic-blue mb-6 text-center font-pixel-font">Terms of Service</h3>
+            <div class="text-gray-300 text-sm leading-relaxed space-y-4">
+                <p>Welcome to Sonic Academy, where the rings of knowledge are plentiful! By accessing or using our website and services, you agree to abide by these Terms of Service. If you don't agree, you might just get booted out of Green Hill Zone!</p>
+                <h4>1. Acceptance of Terms:</h4>
+                <p>By using Sonic Academy, you agree to these terms, our Privacy Policy, and our Cookie Policy. If you're under 18, please get a guardian's permission to run with us.</p>
+                <h4>2. Use of Service:</h4>
+                <p>You agree to use our services only for lawful purposes. No hacking into Dr. Eggman's machines using our knowledge, please! You must not use our site to transmit any harmful code or content.</p>
+                <h4>3. Intellectual Property:</h4>
+                <p>All content on Sonic Academy, including text, graphics, logos, and course materials, is the property of Sonic Academy (and by extension, Chameleon LLC) or its content suppliers and is protected by copyright laws. You may not reproduce, distribute, or create derivative works without our express permission.</p>
+                <h4>4. Disclaimers:</h4>
+                <p>Our course materials are provided "as is." We don't guarantee that you'll become Super Sonic instantly, but we do promise a quality learning experience. We are not responsible for any damage or loss caused by your use of the materials.</p>
+                <h4>5. Limitation of Liability:</h4>
+                <p>Sonic Academy, its affiliates, and its partners will not be liable for any direct, indirect, incidental, special, or consequential damages resulting from your use or inability to use our services.</p>
+                <h4>6. Changes to Terms:</h4>
+                <p>We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Your continued use of the site means you accept these changes. Keep up the pace!</p>
+                <p>Thanks for joining the dash! Now go collect those knowledge rings!</p>
+                </div>
+            <button class="absolute top-4 right-4 text-gray-400 hover:text-neon-red text-3xl" onclick="closeModal('termsOfServiceModal')">&times;</button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-dark/95 z-50 backdrop-blur-md hidden flex-col items-center justify-center">
+        <button id="close-menu" class="absolute top-6 right-6 text-sonic-blue text-3xl">
+            &times;
+        </button>
+        <div class="flex flex-col space-y-8 text-center">
+            <a href="#hero" class="text-3xl hover:text-sonic-blue transition-all duration-300 neon-text" style="animation-delay: 0.1s">
+                Home Zone
+            </a>
+            <a href="#materials" class="text-3xl hover:text-sonic-red transition-all duration-300 neon-text" style="animation-delay: 0.2s">
+                Material Rings
+            </a>
+            <a href="#applications" class="text-3xl hover:text-sonic-green-hill transition-all duration-300 neon-text" style="animation-delay: 0.3s">
+                Application Levels
+            </a>
+            <a href="#course-details" class="text-3xl hover:text-sonic-blue transition-all duration-300 neon-text" style="animation-delay: 0.4s">
+                Course Journey
+            </a>
+        </div>
+    </div>
+
+    <nav class="fixed w-full z-40 backdrop-blur-md bg-dark/80 border-b border-gray-800" id="main-header">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold bg-gradient-to-r from-sonic-red to-sonic-blue bg-clip-text text-transparent flex items-center hover:scale-105 transition-transform duration-300">
+                <span class="mr-2 font-pixel-font text-3xl">SONIC</span>
+                <span class="text-sonic-green-hill font-pixel-font text-3xl">AC</span>
+                <span class="ml-2 text-xs bg-neon-purple/20 text-neon-purple px-2 py-1 rounded-full font-mono">IoT Course</span>
+            </a>
+
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="hover:text-sonic-blue transition-all duration-300 group relative overflow-hidden">
+                    <span class="block">Home Zone</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-sonic-blue transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500"></span>
+                </a>
+                <a href="#materials" class="hover:text-sonic-red transition-all duration-300 group relative overflow-hidden">
+                    <span class="block">Material Rings</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-sonic-red transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-100"></span>
+                </a>
+                <a href="#applications" class="hover:text-sonic-green-hill transition-all duration-300 group relative overflow-hidden">
+                    <span class="block">Application Levels</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-sonic-green-hill transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-200"></span>
+                </a>
+                <a href="#course-details" class="hover:text-neon-purple transition-all duration-300 group relative overflow-hidden">
+                    <span class="block">Course Journey</span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-neon-purple transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500 delay-300"></span>
+                </a>
+            </div>
+
+            <button id="open-menu" class="md:hidden text-sonic-blue hover:text-sonic-red transition-colors duration-300" aria-label="Open main menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden bg-gradient-to-br from-darker to-dark">
+        <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="relative">
+                <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6 font-pixel-font">
+                    Dash Through the <span class="text-sonic-blue neon-text">IoT</span> World!
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-lg fade-in-up">
+                    Collect the Chaos Emeralds of knowledge and master the core components that power the Internet of Things.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="px-8 py-3 bg-gradient-to-r from-sonic-blue to-neon-purple rounded-full font-semibold hover:shadow-lg hover:shadow-sonic-blue/30 transition-all duration-300 hover:scale-105 group relative overflow-hidden fade-in-up" onclick="window.location.href='#course-details'">
+                        <span class="relative z-10 text-white">Start Your Adventure</span>
+                        <span class="absolute inset-0 bg-gradient-to-r from-neon-purple to-sonic-blue opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="relative flex justify-center items-center">
+                <img src="https://i.gifer.com/origin/d5/d5b88b45655b89b33ff6d1dc2df982ff_w200.webp" alt="Sonic running fast" class="w-64 md:w-96 animate-speed-dash-loop drop-shadow-lg animate-speed-dash-offset">
+            </div>
+        </div>
+    </section>
+
+    <div class="relative h-2 w-full overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-sonic-red via-sonic-yellow to-sonic-green-hill animate-text-shine"></div>
+    </div>
+
+    <section id="materials" class="py-20 relative bg-darker">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="text-sonic-green-hill font-mono text-sm mb-4 block animate-neon-flicker">COLLECT THE RINGS</span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 fade-in-up font-pixel-font">
+                    <span class="bg-gradient-to-r from-sonic-blue to-neon-purple bg-clip-text text-transparent">Essential</span> IoT Power-Ups
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto fade-in-up">
+                    Discover the fundamental building blocks that enable smart devices to sense, process, and communicate, just like collecting rings in a level!
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="batata bg-dark/50 border border-gray-800 rounded-2xl p-8 hover:border-sonic-yellow transition-all duration-500 group hover-3d relative overflow-hidden fade-in-up ">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sonic-yellow/0 to-sonic-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-full bg-sonic-yellow/10 flex items-center justify-center mb-6 group-hover:bg-sonic-yellow/20 transition-all duration-500 group-hover:animate-ring-spin">
+                            <svg class="w-8 h-8 text-sonic-yellow" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="12" cy="12" r="6" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sonic-yellow transition-all duration-500">Sensors</h3>
+                        <p class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            The eyes and ears of IoT: from temperature and humidity to motion and light detection. Collect data like rings!
+                        </p>
+                        <div class="mt-6">
+                            <span class="inline-block px-3 py-1 bg-sonic-yellow/10 text-sonic-yellow text-xs font-mono rounded-full group-hover:bg-sonic-yellow/20 transition-all duration-300">
+                                Data Acquisition
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="batata bg-dark/50 border border-gray-800 rounded-2xl p-8 hover:border-neon-purple transition-all duration-500 group hover-3d relative overflow-hidden fade-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/0 to-neon-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-lg bg-neon-purple/10 flex items-center justify-center mb-6 group-hover:bg-neon-purple/20 transition-all duration-500 group-hover:animate-chaos-emerald-glow">
+                            <svg class="w-8 h-8 text-neon-purple" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L6 12l6 10 6-10zM12 4.4L7.4 12 12 19.6 16.6 12z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-neon-purple transition-all duration-500">Microcontrollers</h3>
+                        <p class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            The core power of IoT devices, processing data and executing commands efficiently – like a Chaos Emerald!
+                        </p>
+                        <div class="mt-6">
+                            <span class="inline-block px-3 py-1 bg-neon-purple/10 text-neon-purple text-xs font-mono rounded-full group-hover:bg-neon-purple/20 transition-all duration-300">
+                                Edge Computing
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="batata bg-dark/50 border border-gray-800 rounded-2xl p-8 hover:border-sonic-green-hill transition-all duration-500 group hover-3d relative overflow-hidden fade-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sonic-green-hill/0 to-sonic-green-hill/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-lg bg-sonic-green-hill/10 flex items-center justify-center mb-6 group-hover:bg-sonic-green-hill/20 transition-all duration-500 group-hover:animate-item-bounce">
+                            <svg class="w-8 h-8 text-sonic-green-hill" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2c-3.866 0-7 3.134-7 7s3.134 7 7 7c.307 0 .61-.027.909-.077L15 22h2l-2.091-7.077C19.873 13.91 22 10.741 22 7c0-3.866-3.134-7-7-7H12zm0 14c-2.761 0-5-2.239-5-5s2.239-5 5-5 5 2.239 5 5-2.239 5-5 5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sonic-green-hill transition-all duration-500">Connectivity</h3>
+                        <p class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            Enabling communication: Wi-Fi, Bluetooth, Cellular, LoRaWAN – connecting devices like springs launch Sonic!
+                        </p>
+                        <div class="mt-6">
+                            <span class="inline-block px-3 py-1 bg-sonic-green-hill/10 text-sonic-green-hill text-xs font-mono rounded-full group-hover:bg-sonic-green-hill/20 transition-all duration-300">
+                                Network Protocols
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="batata bg-dark/50 border border-gray-800 rounded-2xl p-8 hover:border-sonic-red transition-all duration-500 group hover-3d relative overflow-hidden fade-in-up">
+                    <div class="absolute inset-0 bg-gradient-to-br from-sonic-red/0 to-sonic-red/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 rounded-lg bg-sonic-red/10 flex items-center justify-center mb-6 group-hover:bg-sonic-red/20 transition-all duration-500 group-hover:animate-item-bounce">
+                            <svg class="w-8 h-8 text-sonic-red" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 20v-5h3v5c0 1.1-.9 2-2 2h-1c-1.1 0-2-.9-2-2zM15 15h3V9h-3v6zM7 9h3v6H7V9zM19 7h-2V4c0-1.1-.9-2-2-2h-1c-1.1 0-2 .9-2 2v3H9V4c0-1.1-.9-2-2-2H6c-1.1 0-2 .9-2 2v3H2v2h2v6H2v2h2v3c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-3h2v3c0 1.1.9 2 2 2h1c1.1 0 2-.9 2-2v-3h2v-2h-2V9h2V7h-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3 group-hover:text-sonic-red transition-all duration-500">Power & Energy</h3>
+                        <p class="text-gray-400 group-hover:text-white transition-colors duration-300">
+                            Sustainable power solutions, battery technologies, and energy harvesting for long-lasting IoT deployments – keep your devices powered up!
+                        </p>
+                        <div class="mt-6">
+                            <span class="inline-block px-3 py-1 bg-sonic-red/10 text-sonic-red text-xs font-mono rounded-full group-hover:bg-sonic-red/20 transition-all duration-300">
+                                Efficiency & Longevity
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="course-details" class="py-20 bg-darker rounded-xl m-4 parallax-bg border-2 border-sonic-green-hill">
+        <div class="container mx-auto px-4 parallax-content" id="course-details-content">
+            <h2 class="text-4xl font-bold text-center text-white mb-12 fade-in-up font-pixel-font">Your IoT Journey: Course Modules <br><span style="font-size: 15px;" class="font-thin">newest items will come first</span></h2>
+        </div>
+    </section>
+
+    <div class="relative h-2 w-full overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-neon-purple via-sonic-red to-sonic-blue animate-text-shine"></div>
+    </div>
+
+    <section id="applications" class="py-20 bg-dark rounded-xl m-4">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-white mb-12 fade-in-up font-pixel-font">Real-World IoT Adventures</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="batata service-card-tilt p-8 rounded-xl shadow-xl bg-darker border border-gray-800 hover:border-sonic-green-hill fade-in-up">
+                    <div class="service-card-tilt-inner">
+                        <div class="text-sonic-green-hill mb-4 text-5xl flex justify-center">
+                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L4 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-8-3zm-1 17.93c-3.95-.49-7-3.85-7-7.93h2c0 2.65 1.55 4.97 3.79 6.02L11 19.93zm3-1.89c2.24-1.05 3.79-3.37 3.79-6.02h2c0 4.08-3.05 7.44-7 7.93v-2zM6.02 13.79c-.49-3.95 2.86-7 6.84-7V4.07c-4.08.49-7.44 3.05-7.93 7h2zM12 4.07c3.95.49 7 3.85 7 7.93h-2c0-2.65-1.55-4.97-3.79-6.02L12 4.07z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4 text-center">Green Hill Cities</h3>
+                        <p class="text-gray-400 text-center">Deploy IoT sensors and networks to optimize traffic, energy, and public services for urban living.</p>
+                    </div>
+                </div>
+
+                <div class="batata service-card-tilt p-8 rounded-xl shadow-xl bg-darker border border-gray-800 hover:border-sonic-blue fade-in-up">
+                    <div class="service-card-tilt-inner">
+                        <div class="text-sonic-blue mb-4 text-5xl flex justify-center">
+                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 12h-2V7h-4V4H9V2H7v2H5v3H3v5H1v2h2v5h2v-3h4v3h2v-3h4v3h2v-5h2v-2zm-6 2V9h-2v5H7v-5H5v5H3V9h-2v2h2v5h2v-5h2v5h2v-5h2v5h2v-5h-2v-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4 text-center">Chemical Plant IIoT</h3>
+                        <p class="text-gray-400 text-center">Transform manufacturing and supply chains with connected machinery and predictive maintenance.</p>
+                    </div>
+                </div>
+
+                <div class="batata service-card-tilt p-8 rounded-xl shadow-xl bg-darker border border-gray-800 hover:border-neon-purple fade-in-up">
+                    <div class="service-card-tilt-inner">
+                        <div class="text-neon-purple mb-4 text-5xl flex justify-center">
+                            <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 14H4V6h16v12zm-8-3.5l4-4 4 4-2.5 2.5-1.5-1.5-1.5 1.5-2.5-2.5zM9 9H7V7h2v2zm3 0h-2V7h2v2zm3 0h-2V7h2v2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4 text-center">Labyrinth Health & Wearables</h3>
+                        <p class="text-gray-400 text-center">Revolutionize healthcare with remote patient monitoring, smart diagnostics, and connected medical devices.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 relative overflow-hidden bg-gradient-to-br from-sonic-blue/10 to-neon-purple/10" id="about">
+        <div class="absolute inset-0 bg-gradient-to-br from-neon-purple/5 to-sonic-blue/5"></div>
+
+        <div class="absolute top-1/4 left-1/4 w-16 h-16 rounded-lg bg-sonic-yellow/20 animate-float animate-chaos-emerald-glow"></div>
+        <div class="absolute top-1/3 right-1/3 w-24 h-24 rounded-lg bg-neon-pink/20 animate-float animate-float-delay-1 animate-chaos-emerald-glow"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-20 h-20 rounded-lg bg-neon-purple/20 animate-float animate-float-delay-2 animate-chaos-emerald-glow"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 fade-in-up font-pixel-font">
+                Who is <span class="bg-gradient-to-r from-sonic-red to-sonic-blue bg-clip-text text-transparent">SONIC AC</span>?
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 fade-in-up">
+                Sonic Academy is a playful, innovative initiative dedicated to making the Internet of Things accessible and exciting for everyone. Developed by <a href="https://chameleon-nu.vercel.app/" target="_blank" rel="noopener" class="link-gold" style="color: gold;">ChameleonFCDS team </a>, Inspired by the speed and creativity of Sonic, our academy empowers students to master IoT fundamentals, explore real-world applications, and build the future—one ring at a time
+            </p>
+            <div class="flex flex-wrap justify-center gap-6">
+                <button class="px-10 py-4 border border-sonic-blue text-sonic-blue rounded-full font-semibold hover:bg-sonic-blue/10 transition-all duration-300 text-lg hover:scale-105 flex items-center group fade-in-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 group-hover:animate-pulse" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v8a2 2 0 01-2 2h-2a2 2 0 01-2-2V6z" />
+                    </svg>
+                    Contact The G.U.N. Headquarters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-darker border-t-4 border-sonic-red py-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <a href="#" class="text-2xl font-bold bg-gradient-to-r from-sonic-red to-sonic-blue bg-clip-text text-transparent flex items-center mb-6 hover:scale-105 transition-transform duration-300 inline-block font-pixel-font">
+                        SONIC ACADEMY
+                    </a>
+                    <p class="text-gray-400 mb-6">
+                        Developed by <a href="https://chameleon-nu.vercel.app/" class="text-sonic-red hover:text-red-600 font-bold transition-colors duration-300">Dr. Eggman's Secret Lair (Chameleon LLC)</a> – Pioneering education in future technologies, preparing students for the digital age and beyond.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="mailto:tokyo9900777@gmail.com" class="text-gray-400 hover:text-sonic-red transition-colors duration-300 hover:scale-125">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" >
+                            <path d="m18.73 5.41-1.28 1L12 10.46 6.55 6.37l-1.28-1A2 2 0 0 0 2 7.05v11.59A1.36 1.36 0 0 0 3.36 20h3.19v-7.72L12 16.37l5.45-4.09V20h3.19A1.36 1.36 0 0 0 22 18.64V7.05a2 2 0 0 0-3.27-1.64"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/abdoahmed/" class="text-gray-400 hover:text-sonic-blue transition-colors duration-300 hover:scale-125">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z" />
+                            </svg>
+                        </a>
+                        <a href="https://nextjs.org/" class="text-gray-400 hover:text-neon-gold transition-colors duration-300 hover:scale-125">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" >
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.05 0 3.95-.62 5.54-1.67L9.26 9.63v6.5H7.87V7.86h1.74l9.03 11.63A9.97 9.97 0 0 0 22.01 12c0-5.52-4.48-10-10-10Zm4.25 12.13-1.38-1.78V7.86h1.38z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://vercel.com/" class="text-gray-400 hover:text-neon-white transition-colors duration-300 hover:scale-125">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  fill="currentColor" viewBox="0 0 24 24" >
+                            <path d="M12 2.68 22 20H2z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-sonic-blue hover:underline">IoT Course Map</h3>
+                    <ul class="space-y-3" id="footer-links">
+                        <!-- the links will be fetched from the course details section -->
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-sonic-green-hill hover:underline">Bonus Levels</h3>
+                    <ul class="space-y-3">
+                        <li><a href="https://www.iot-lab.info/" class="text-gray-400 hover:text-sonic-yellow transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-sonic-yellow rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            IoT Lab Access
+                        </a></li>
+                        <li><a href="https://www.simplilearn.com/internet-of-things-iot-projects-article" class="text-gray-400 hover:text-sonic-yellow transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-sonic-yellow rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Project Gallery
+                        </a></li>
+                        <li><a href="https://iotcommunity.net/" class="text-gray-400 hover:text-sonic-yellow transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-sonic-yellow rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            IoT Community Forum
+                        </a></li>
+                        <li><a href="https://www.iotforall.com/webinars" class="text-gray-400 hover:text-sonic-yellow transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-sonic-yellow rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Webinars & Workshops
+                        </a></li>
+                        <li><a href="https://www.mygreatlearning.com/blog/iot-career-opportunities/" class="text-gray-400 hover:text-sonic-yellow transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-sonic-yellow rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Career Paths in IoT
+                        </a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-semibold mb-6 text-neon-purple hover:underline">Chaos Academy</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-400 hover:text-neon-pink transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-neon-pink rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            About Sonic Academy
+                        </a></li>
+                        <li><a href="https://fcds.alexu.edu.eg/index.php/en/" class="text-gray-400 hover:text-neon-pink transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-neon-pink rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Faculty & Staff
+                        </a></li>
+                        <li><a href="https://teams.microsoft.com/l/message/19:EH8GE65EOEMvweoqzy_q7RpG8oLPz4e60jCc1fON_ug1@thread.tacv2/1751695389521?tenantId=eaf624c8-a0c4-4195-87d2-443e5d7516cd&groupId=a08d249e-4af6-4bde-b84c-c0404dc10586&parentMessageId=1751695389521&teamName=IoT%20Training%20-%20Summer%202025&channelName=General&createdTime=1751695389521" class="text-gray-400 hover:text-neon-pink transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-neon-pink rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Microsoft Teams
+                        </a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('privacyPolicyModal')" class="text-gray-400 hover:text-neon-pink transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-neon-pink rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Privacy Policy
+                        </a></li>
+                        <li><a href="javascript:void(0)" onclick="openModal('termsOfServiceModal')" class="text-gray-400 hover:text-neon-pink transition-colors duration-300 flex items-center group">
+                            <span class="w-2 h-2 bg-neon-pink rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                            Terms of Service
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0" id="footer-text">
+                </p>
+                <div class="flex space-x-6">
+                    <a href="javascript:void(0)" onclick="openModal('termsOfServiceModal')" class="text-gray-500 hover:text-sonic-blue text-sm transition-colors duration-300">Terms of Service</a>
+                    <a href="javascript:void(0)" onclick="openModal('privacyPolicyModal')" class="text-gray-500 hover:text-sonic-blue text-sm transition-colors duration-300">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-10 right-8 w-12 h-12 rounded-full bg-sonic-green-hill/20 border border-sonic-green-hill flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:bg-sonic-green-hill/30 z-30" title="Return to Start Zone" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-sonic-green-hill" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+    <script src="script.js"></script>
+    <script src="tailwind.js"></script>
+</body>
+</html>
