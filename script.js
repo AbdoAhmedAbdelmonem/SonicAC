@@ -415,7 +415,7 @@ function detectDevTools() {
 document.addEventListener('DOMContentLoaded', () => {
     let footerText = document.getElementById('footer-text');
     if (footerText) {
-        footerText.innerHTML = `&copy; ${new Date().getFullYear()} Neon Academy. All rights reserved. Run fast, learn faster!`;
+        footerText.innerHTML = `&copy; ${new Date().getFullYear()} Sonic Academy. All rights reserved. Run fast, learn faster!`;
     }
 
     const openMenuBtn = document.getElementById('open-menu');
