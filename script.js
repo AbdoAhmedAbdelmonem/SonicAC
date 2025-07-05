@@ -248,7 +248,7 @@ async function fetchDriveItems(folderId = driveFolderId) {
 
                 div.innerHTML = `
                     <div class="absolute top-0 left-0 mt-4 ml-4 flex flex-row items-center z-20">
-                        ${isNew ? '<span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full mr-2 animate-pulse">NEW ITEM</span>' : ''}
+                        ${isNew ? '<span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full mr-2 animate-pulse">NEW</span>' : ''}
                         <span class="text-gray-500 text-xs">Uploaded: ${uploadedDateString}</span>
                     </div>
 
